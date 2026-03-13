@@ -12,5 +12,5 @@ O foco principal deste portfólio é o **minimalismo** e a **performance**. Busq
 
 ## 📂 Projetos em Destaque
 Dentro do portfólio, você encontrará demonstrações de:
-* **Aplicação de Previsão do Tempo:** Integração com API em tempo real para exibição de dados climáticos. ( a api não esta funcionando no momneto)
+* **Aplicação de Previsão do Tempo:** Integração com API em tempo real para exibição de dados climáticos. ( a api não esta funcionando no momento )
 * **Animações de Scroll:** Implementação de efeitos visuais suaves durante a rolagem da página.
