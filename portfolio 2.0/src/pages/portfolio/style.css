@@ -1,0 +1,436 @@
+/* --- RESET & BASE --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
+
+body { 
+    background: #000; 
+    color: #fff; 
+    overflow-x: hidden;
+}
+
+html { 
+    scroll-behavior: smooth;
+}
+ 
+.container {
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 25px;
+}
+
+/* --- CABEÇALHO --- */
+header { 
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000; 
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(15px);
+}
+
+.barra-navegacao { 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.logotipo { 
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.logotipo span {
+    color: #4facfe;
+}
+
+.links-navegacao { 
+    display: flex;
+    list-style: none;
+    gap: 30px; 
+}
+
+.links-navegacao a { 
+    text-decoration: none; 
+    color: #fff; 
+    font-size: 0.9rem;
+    opacity: 0.6; 
+    transition: 0.3s; 
+}
+
+.links-navegacao a:hover { 
+    opacity: 1;
+    color: #4facfe; 
+}
+
+/* --- SEÇÃO PRINCIPAL (INÍCIO) --- */
+.principal {
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 25px 0 25px; 
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 50px;
+}
+
+.texto-centralizado {
+    flex: 1;
+}
+
+/* --- ANIMAÇÕES DE CARREGAMENTO --- */
+.saudacao {
+    font-size: 1.8rem;
+    color: #4facfe;
+    margin-bottom: 5px;
+    font-weight: 300;
+    opacity: 0;
+    animation: aparecer 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.texto-centralizado h1 {
+    font-size: 5.5rem;
+    line-height: 0.9;
+    margin: 15px 0; 
+    opacity: 0;
+    animation: aparecer 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.destaque { 
+    color: #4facfe;
+    font-size: 6rem;
+    text-shadow: 0 0 20px rgba(79, 172, 254, 0.3);
+    display: block;
+}
+
+.cargo {
+    font-size: 1.4rem;
+    color: #888;
+    text-transform: uppercase; 
+    margin-top: 10px;
+    display: flex;
+    opacity: 0;
+    animation: aparecer 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+/* --- EFEITO DE DIGITAÇÃO --- */
+.efeito-digitar {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 3px solid #4facfe;
+    white-space: nowrap;
+    width: 0;
+    animation: 
+        digitar 2s steps(30, end) forwards,
+        piscar-cursor 0.8s step-end infinite;
+    animation-delay: 1.6s;
+}
+
+@keyframes digitar {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes piscar-cursor {
+    from, to { border-color: transparent; }
+    50% { border-color: #4facfe; }
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); filter: blur(10px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* Visual do Hero (Esfera) */
+.visual-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-esfera {
+    flex-shrink: 0; 
+    width: 350px;
+    height: 350px; 
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #4facfe;
+    box-shadow: 0 0 40px rgba(79, 172, 254, 0.4);
+}
+
+.container-esfera img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- SEÇÃO SOBRE MIM --- */
+.sobre-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    margin-top: 50px;
+}
+
+.sobre-imagem {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.sobre-imagem img {
+    width: 100%;
+    display: block;
+    transition: 0.5s ease;
+}
+
+.sobre-imagem:hover img {
+    transform: scale(1.05);
+}
+
+.sobre-texto {
+    flex: 1.5;
+}
+
+.sobre-texto h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.sobre-texto p {
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Badges de Tecnologias */
+.badges-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.badge {
+    background: rgba(79, 172, 254, 0.1);
+    color: #4facfe;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(79, 172, 254, 0.3);
+    transition: 0.3s;
+}
+
+.badge:hover {
+    background: #4facfe;
+    color: #000;
+}
+
+/* Botões Sociais */
+.botoes-sociais-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-social {
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.whatsapp { background: #25d366; }
+.email { background: #ea4335; }
+.linkedin { background: #0077b5; }
+.github { background: #333; }
+
+.btn-social:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+/* --- PROJETOS --- */
+.secao {
+    padding: 100px 0;
+}
+
+.titulo-secao {
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.grade-projetos { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 35px;
+}
+
+.card-projeto {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 25px;
+    padding: 15px;
+    transition: 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.embrulho-imagem-projeto {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.embrulho-imagem-projeto img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/* Sobreposição Ajustada */
+.sobreposicao-card {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro para destacar o botão */
+    backdrop-filter: blur(3px);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: 0.3s;
+}
+
+.embrulho-imagem-projeto:hover .sobreposicao-card {
+    opacity: 1;
+}
+
+.corpo-projeto { 
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Botão Acessar Projeto (CINZA) */
+.link-botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background-color: #333; /* Cor cinza */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+    border: 1px solid #444;
+    margin-top: 20px; /* ESPAÇO PARA NÃO COLAR NO TEXTO */
+    width: fit-content;
+}
+
+.link-botao:hover {
+    background-color: #555;
+    transform: scale(1.05);
+    border-color: #4facfe;
+}
+
+.link-botao i {
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.link-botao:hover i {
+    transform: translateX(5px);
+}
+
+.card-projeto:hover {
+    transform: translateY(-15px);
+    border-color: #4facfe;
+}
+
+/* --- CONTATO --- */
+.caixa-contato { 
+    max-width: 600px;
+    margin: 0 auto;
+    background: #0a0a0a;
+    padding: 40px; 
+    border-radius: 30px; 
+}
+
+.formulario-contato { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.formulario-contato input, 
+.formulario-contato textarea {
+    padding: 18px; 
+    background: #111; 
+    border: 1px solid #222; 
+    border-radius: 12px; 
+    color: #fff; 
+    outline: none;
+}
+
+.botao-principal { 
+    background: #4facfe; 
+    color: #000; 
+    padding: 15px; 
+    border-radius: 50px; 
+    font-weight: 600; 
+    border: none; 
+    cursor: pointer; 
+    transition: 0.4s; 
+}
+
+/* --- ANIMAÇÕES DE SCROLL --- */
+.revelacao-visual, .revelacao {
+    opacity: 0; 
+    filter: blur(20px); 
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+}
+
+.revelacao-visual.active, 
+.revelacao.active { 
+    opacity: 1; 
+    filter: blur(0px); 
+    transform: translateY(0); 
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+    .texto-centralizado h1 { font-size: 4rem; }
+    .destaque { font-size: 4.5rem; }
+    .sobre-conteudo { flex-direction: column; text-align: center; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+    .principal {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+    }
+    .texto-centralizado h1 { font-size: 3rem; }
+    .destaque { font-size: 3.5rem; }
+    .container-esfera { width: 280px; height: 280px; }
+    .badges-tecnologias, .botoes-sociais-container { justify-content: center; }
+}
